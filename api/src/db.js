@@ -35,12 +35,12 @@ const { Country, Activity } = sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 Country.belongsToMany(Activity, { //Relación de muchos a muchos, un país puede tener muchas actividades
-  through: "country-activity",
+  through: "countryactivity",
   timestamps: false
 });
 
 Activity.belongsToMany(Country, { //Relación de muchos a muchos, un actividad puede hacerse en muchos paises
-  through: "country-activity",
+  through: "countryactivity",
   timestamps: false
 });
 

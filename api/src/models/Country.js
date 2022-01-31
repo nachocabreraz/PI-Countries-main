@@ -8,9 +8,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-      validate: {
-      len: 3
-      },
+      // validate: {
+      // len: 3
+      // },
     },
 
     // id: {
@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
 
-    img: {
+    flag: {
       type: DataTypes.STRING,
       isUrl: true,
       allowNull: false
@@ -50,11 +50,15 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
       allowNull: true
     },
-
     population: {
       type: DataTypes.INTEGER,
       allowNull: true
-    },  
+    },
+    createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
   },
   {timestamps: false}  // PARA NO AGREGAR updated_at/created_at
   );
