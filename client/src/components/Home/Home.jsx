@@ -79,8 +79,8 @@ export default function Home() {
                 { unicos.length === 0?
                 <p>Create activities to filter them</p>
             : <select onChange={ev=>handleActivities(ev)}>
-                {unicos.map(ev=>(
-                <option value={ev}>{ev}</option>
+                {unicos.map((ev, index)=>(
+                <option key={index} value={ev}>{ev}</option>
                 ))}
                 </select>}
 
@@ -117,8 +117,9 @@ export default function Home() {
                     countriesActualPage?.map(el=>{
                         return (
                             <div key={el.id}> 
+                            <Link to={'/country/' + el.id}>
                                 <Cards flag={el.flag} name={el.name} id={el.id} capital={el.capital} continent={el.continent} subregion={el.subregion} area={el.area} population={el.population} />
-
+                            </Link>
                             </div>
                             )
                     })}

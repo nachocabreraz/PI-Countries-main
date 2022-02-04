@@ -52,7 +52,7 @@ const getFromId = (req, res, next) => {
   })
     .then((countryDb) => {
       countryDb
-        ? res.json([countryDb])
+        ? res.json(countryDb)
         : res.status(404).send("No matches were found");
     })
     .catch((error) => {

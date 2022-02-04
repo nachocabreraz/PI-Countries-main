@@ -3,7 +3,7 @@ import React from "react";
 export default function Cards({ flag, name, id, capital, continent, subregion, area, population }) {
     return (
         <div>
-            <img src={flag}/>
+            <img src={flag} alt='No flag found'/>
             {/* <h3>{flag}</h3> */}
             <h4>{name}</h4>
             <h4>{id}</h4>
