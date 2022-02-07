@@ -1,0 +1,54 @@
+.button{
+    background-color: darkgray;
+    border-radius: 25px;
+    font-size: large;
+    position: absolute;
+    color: rgb(32, 29, 29);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.button:hover{
+    background-color: rgb(11, 79, 105);
+    font-size: larger;
+    cursor: pointer;
+}
+
+.header{
+    color: floralwhite;
+    font-size: xxx-large;
+    padding-top: 0%;
+    /* border: 1px solid blue; */
+    
+}
+
+.quote{
+    color: darkgray;
+    font-style: oblique;
+    position: absolute;
+    top: 4cm;
+}
+
+.image{
+    /* background-image: url('https://thumbs.gfycat.com/FirsthandImmediateGlowworm-size_restricted.gif'); */
+
+    
+    
+    
+    background-image: url('https://media0.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy-downsized-large.gif');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1366px;
+    height: 661px;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.divheader{
+    position: absolute;
+    /* border: 1px solid black; */
+    top: 0;
+}

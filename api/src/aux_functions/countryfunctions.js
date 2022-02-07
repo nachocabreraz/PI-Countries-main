@@ -67,7 +67,7 @@ const getFromName = async (req, res) => {
     if(name){
       let country = await Country.findAll({
         include: {model: Activity},
-        where: {name: {[Op.iLike]: `%${name}`}}
+        where: {name: {[Op.iLike]: `%${name}%`}} //agregue%
       });
       return country ? res.json(country) : res.status(404).json({message: 'There is no country with that name'})
     } else {

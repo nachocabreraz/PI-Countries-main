@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { postActivity, getActivity } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import './Create.css'
 
 function validate(input) {
     if(!input.name){ console.log(input.name)
         alert("Name is required");
-    }else if(!input.difficulty){
-        alert ("Difficulty is required");
-    }else if(!input.duration){
-       alert ("Duration is required");
+    }else if(!input.difficulty || input.difficulty > 5 || input.difficulty < 1){
+        alert ("Difficulty is required, and it has to be from 1 to 5");
+    }else if(!input.duration || input.duration >12 || input.duration < 1){
+       alert ("Duration is required, and it has to be from 1 to 12");
     }else if(!input.season){
        alert ("Season is required");
     }else if(input.countryId < 1){
@@ -20,7 +21,7 @@ function validate(input) {
 
 export default function ActivityCreation() {
     const dispatch = useDispatch();
-    const selectedCountries = useSelector((state)=> state.allCountries); //chequear nombre allCountries, estaba como allPaises
+    const selectedCountries = useSelector((state)=> state.allCountries);
     const [, setError] = useState({});
     const [input, setInput]=useState({
         name:"",
@@ -87,24 +88,25 @@ function hadleSubmit(ev) {
     });
 };
     return(
-        <div>
-            <h1>Create Activity</h1>
+        <div className="createContainer">
             <div>
-            <Link to = '/home'><button>Back to Home</button></Link> 
+            <Link to = '/home'><button className="goback">Back to Home</button></Link> 
             </div>
 
-            <div>
+            <h1>Create Activity</h1>
+
+            <div className="things">
             <form>
                 
                 <div>
                     <label>Activity:</label>
-                    <input type = 'text' value = {input.name} name ='name'
+                    <input className="blank" type = 'text' value = {input.name} name ='name'
                     onChange={(ev) => hadleChange(ev)}></input>
                 </div>
 
                 <div>
                     <label>Difficulty:</label>
-                    <input type='number' value={input.difficulty} name='difficulty' onChange = {(ev)=> hadleDifficulty(ev)} />
+                    <input className="blank" type='number' value={input.difficulty} name='difficulty' onChange = {(ev)=> hadleDifficulty(ev)} />
                     {/* <select onChange = {(ev)=> hadleDifficulty(ev)}>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
@@ -116,13 +118,13 @@ function hadleSubmit(ev) {
 
                 <div>
                     <label>Duration: -from 1 to 12-</label>
-                    <input type='number' value = {input.duration} name ='duration'
+                    <input className="blank" type='number' value = {input.duration} name ='duration'
                     onChange={(ev) => hadleChange(ev)}></input>
                 </div>
 
                 <div>
                     <label >Season: </label>
-                    <select onChange={(ev) => hadleSeason(ev)} >
+                    <select className="blank" onChange={(ev) => hadleSeason(ev)} >
                     <option value ='summer'>summer</option>
                     <option value ='winter'>winter</option>
                     <option value='autumn'>autumn</option>
@@ -131,12 +133,12 @@ function hadleSubmit(ev) {
                 </div>
 
                 <div>
-                <label>Countries: <select  onChange = {(ev) => hadleSelect(ev)}>
+                <label>Countries: <select className="blank" onChange = {(ev) => hadleSelect(ev)}>
                     {selectedCountries.map((ev)=>(
                         <option value ={ev.id} >{ev.name} </option>
                     ))}
                 </select></label>
-            <button type='submit' onClick={(ev) => hadleSubmit(ev)}>Add</button>
+            <button className="add" type='submit' onClick={(ev) => hadleSubmit(ev)}>Add Activity</button>
             </div>
             </form>
 

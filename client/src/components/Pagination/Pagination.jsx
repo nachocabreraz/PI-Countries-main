@@ -1,6 +1,7 @@
 import React from "react";
+import './Pagination.css'
 
-export default function Pagination({countriesPerPage, allCountries, paginado}){
+export default function Pagination({countriesPerPage, allCountries, paginado, currentPage}){
     const pageNumber = [];
 
     for (let e=1; e<=Math.ceil(allCountries/countriesPerPage); e++){
@@ -10,7 +11,7 @@ export default function Pagination({countriesPerPage, allCountries, paginado}){
         <nav>
             <ul>
                 {pageNumber && pageNumber.map(n=>(
-                    <button key={n} onClick={()=>paginado(n)}>{n}</button>
+                    <button className='pag' key={n} onClick={()=>paginado(n)}>{n}</button>
                 ))}
             </ul>
         </nav>

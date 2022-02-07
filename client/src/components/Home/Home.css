@@ -1,0 +1,139 @@
+.divPrincipal{
+    /* background-image: url('https://free4kwallpapers.com/uploads/originals/2015/10/14/globe-wallpaper.jpg'); */
+    
+    background-image: url('https://images.pexels.com/photos/414916/pexels-photo-414916.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    background-attachment: fixed;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+.goback{
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(202, 60, 60);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+.goback:hover{
+    background: rgb(139, 7, 7);
+}
+
+.CardBig{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+
+.CardSmall{
+    border: 5px solid rgb(198 123 50 / 51%);
+    border-radius: 25px 0px 25px 0px;
+    background-color: rgb(124, 111, 93);
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgba(107, 68, 6, 0.281);
+    margin: 1cm;
+}
+
+.CardSmall:hover{
+    background-color: #a1581d;
+}
+
+.header{
+    font-family: fantasy;
+}
+
+.divReloadCreate{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+
+.create{
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(204, 109, 21);
+    cursor: pointer;
+    font-size: 110%;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.create:hover{
+    background: rgb(156, 84, 16);
+}
+
+.reload{
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(204, 109, 21);
+    cursor: pointer;
+    font-size: 110%;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.reload:hover{
+    background: rgb(156, 84, 16);
+}
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.act{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(197, 139, 32, 0.719);
+    border-radius: 20px;
+    width: 100px;
+    height: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 105%;
+}
+
+.loc{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(197, 139, 32, 0.719);
+    border-radius: 20px;
+    width: 123px;
+    height: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 105%;
+}
+
+.alfa{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(197, 139, 32, 0.719);
+    border-radius: 20px;
+    width: 236px;
+    height: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 105%;
+}
+
+.pop{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(197, 139, 32, 0.719);
+    border-radius: 20px;
+    width: 150px;
+    height: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 105%;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}

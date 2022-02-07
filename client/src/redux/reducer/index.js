@@ -74,6 +74,37 @@ function rootReducer(state = initialState, action){
                 ...state,
                 countries: alfaNombre
             };
+
+            // const count = state.allCountries
+            // let alfaNombre = count
+            //     if(action.payload==='asc'){
+            //         alfaNombre = state.countries.sort(function(a,b){
+            //             if(a.name > b.name){
+            //                 return 1
+            //             }
+            //             if(b.name > a.name){
+            //                 return -1
+            //             }
+            //             return 0
+            //         })
+            //     } else if(action.payload==='des'){
+            //         alfaNombre= state.countries.sort(function(a,b){
+            //             if(a.name > b.name){
+            //                 return -1
+            //             }
+            //             if(b.name > a.name){
+            //                 return 1
+            //             }
+            //             return 0 
+            //         })
+            //     } else if(action.payload==='alf'){
+            //         alfaNombre=state.allCountries
+            //     }
+            //     return {
+            //     ...state,
+            //     countries: alfaNombre
+            //     };
+
             case 'GET_DETAIL':
                 return{
                     ...state,
