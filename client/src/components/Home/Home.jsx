@@ -12,7 +12,16 @@ export default function Home() {
     const dispatch = useDispatch() //pa utilizar la const e ir despachando mis acciones
     const allCountries = useSelector(state => state.countries) //el useSel me trae en la const todo lo que esta en el estado de countries
     const [currentPage, setcurrentPage] = useState(1); //lo inicio en uno para q siempre se inicie en la primera page
-    const[countriesPerPage] = useState(9); //cards que se van a mostrar
+    // const[countriesPerPage] = useState(9); //cards que se van a mostrar
+    var countriesPerPage = 0;
+    if(currentPage === 1){
+        countriesPerPage = 9;
+    }
+    if(currentPage >= 2) {
+        countriesPerPage = 10;
+    }
+
+
     const [, setOrder] = useState('');
     const [, setAZ] = useState('');
     const lastCountry = currentPage * countriesPerPage; //indice del ultimo pais = a la pag actual en la que me encuentro * la cantidad de paises por pag

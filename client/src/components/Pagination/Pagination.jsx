@@ -4,7 +4,7 @@ import './Pagination.css'
 export default function Pagination({countriesPerPage, allCountries, paginado, currentPage}){
     const pageNumber = [];
 
-    for (let e=1; e<=Math.ceil(allCountries/countriesPerPage); e++){
+    for (let e=1; e<=Math.ceil(allCountries/10); e++){
         pageNumber.push(e);
     };
     return(

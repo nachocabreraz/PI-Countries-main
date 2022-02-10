@@ -18,6 +18,10 @@ export default function SearchBar(){
         dispatch(getSearch(name))
     }
 
+
+
+
+
     return(
         <div className="searchcontainer">
             <input className="bar" type="text"

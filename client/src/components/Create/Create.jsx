@@ -26,7 +26,7 @@ export default function ActivityCreation() {
     const [input, setInput]=useState({
         name:"",
         difficulty:"",
-        duracton:"",
+        duration:"",
         season:"",
         countryId:[]
     });
@@ -81,7 +81,7 @@ function hadleSubmit(ev) {
     setInput({
         name:"",
         difficulty:"",
-        duracton:"",
+        duration:"",
         season:"",
         countryId:[]
         
@@ -89,11 +89,16 @@ function hadleSubmit(ev) {
 };
     return(
         <div className="createContainer">
+
+            <div className="create1">
+            
             <div>
             <Link to = '/home'><button className="goback">Back to Home</button></Link> 
             </div>
 
-            <h1>Create Activity</h1>
+            <div>
+            <h1 className="titleact">Create Activity</h1>
+            </div>
 
             <div className="things">
             <form>
@@ -117,7 +122,7 @@ function hadleSubmit(ev) {
                 </div>
 
                 <div>
-                    <label>Duration: -from 1 to 12-</label>
+                    <label>Duration: </label>
                     <input className="blank" type='number' value = {input.duration} name ='duration'
                     onChange={(ev) => hadleChange(ev)}></input>
                 </div>
@@ -142,14 +147,17 @@ function hadleSubmit(ev) {
             </div>
             </form>
 
-            <div>
+            <div className="activity4">
             {input.countryId.map(el=> //para borrar paises despues de agregarlos
-                <div key={el.name}> {/* declaro key para que no se rompa */}
-                    <h6>{el}</h6>
-                    <button onClick={()=> hadleDelete(el)}>x</button>
+                <div className="activity5-grid" key={el.name}> {/* declaro key para que no se rompa */}
+                    <h6 className="activity6">{el}</h6>
+                    <button className="activity-button" onClick={()=> hadleDelete(el)}>x</button>
                 </div>)}
             </div>
         </div>
+
+        </div>
+    
     </div>
     );
 };
