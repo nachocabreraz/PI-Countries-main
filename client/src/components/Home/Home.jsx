@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Cards from "../Cards/Cards";
 import Pagination from "../Pagination/Pagination";
 import SearchBar from "../SearchBar/SearchBar";
-import './Home.css'
+import './Home.css';
 
 export default function Home() {
     const dispatch = useDispatch() //pa utilizar la const e ir despachando mis acciones
@@ -69,6 +69,9 @@ export default function Home() {
     };
 
     function handleActivities(ev){
+        if(!ev.target.value){
+            return
+        }
         dispatch(sortActivity(ev.target.value))
     };
     
@@ -98,6 +101,7 @@ export default function Home() {
                 { unicos.length === 0?
                 <p>Create activities to filter them</p>
             : <select className="act" onChange={ev=>handleActivities(ev)}>
+                <option value="" disabled="">Filter by Activity</option>
                 {unicos.map((ev, index)=>(
                 <option key={index} value={ev}>{ev}</option>
                 ))}

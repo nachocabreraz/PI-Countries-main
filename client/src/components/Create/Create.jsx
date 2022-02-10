@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { postActivity, getActivity } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
@@ -20,6 +20,7 @@ function validate(input) {
 };
 
 export default function ActivityCreation() {
+    const history = useHistory();
     const dispatch = useDispatch();
     const selectedCountries = useSelector((state)=> state.allCountries);
     const [, setError] = useState({});
@@ -50,6 +51,9 @@ function hadleChange(ev){
 };
 
 function hadleSelect(ev) {
+    if(!ev.target.value){
+        return
+    }
     setInput({
         ...input,
         countryId: [...input.countryId, ev.target.value]
@@ -86,6 +90,7 @@ function hadleSubmit(ev) {
         countryId:[]
         
     });
+    history.push("/home");
 };
     return(
         <div className="createContainer">
@@ -105,7 +110,7 @@ function hadleSubmit(ev) {
                 
                 <div>
                     <label>Activity:</label>
-                    <input className="blank" type = 'text' value = {input.name} name ='name'
+                    <input autoComplete="off" className="blank" type = 'text' value = {input.name} name ='name'
                     onChange={(ev) => hadleChange(ev)}></input>
                 </div>
 
@@ -139,8 +144,9 @@ function hadleSubmit(ev) {
 
                 <div>
                 <label>Countries: <select className="blank" onChange = {(ev) => hadleSelect(ev)}>
-                    {selectedCountries.map((ev)=>(
-                        <option value ={ev.id} >{ev.name} </option>
+                <option value="" disabled="">-Select Country-</option>
+                    {selectedCountries.map((ev, index)=>(
+                        <option key={index} value ={ev.id} >{ev.name} </option>
                     ))}
                 </select></label>
             <button className="add" type='submit' onClick={(ev) => hadleSubmit(ev)}>Add Activity</button>
