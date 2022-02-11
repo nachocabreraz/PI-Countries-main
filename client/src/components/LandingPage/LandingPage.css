@@ -18,7 +18,6 @@
     color: floralwhite;
     font-size: xxx-large;
     padding-top: 0%;
-    /* border: 1px solid blue; */
     
 }
 
@@ -30,11 +29,6 @@
 }
 
 .image{
-    /* background-image: url('https://thumbs.gfycat.com/FirsthandImmediateGlowworm-size_restricted.gif'); */
-
-    
-    
-    
     background-image: url('https://media0.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy-downsized-large.gif');
     background-size: cover;
     display: flex;
@@ -49,6 +43,5 @@
 
 .divheader{
     position: absolute;
-    /* border: 1px solid black; */
     top: 0;
 }

@@ -68,6 +68,7 @@ export default function Home() {
         setAZ(`Ordenado ${ev.target.value}`)
     };
 
+    
     function handleActivities(ev){
         if(!ev.target.value){
             return
@@ -123,7 +124,7 @@ export default function Home() {
 
                 <div>
                 <select className="alfa" onChange={ev=>handleAlfa(ev)}>
-                    <option value='alf'>Sort Countries Alphabetically</option>
+                    <option value="" disabled="">Sort Countries Alphabetically</option>
                     <option value='asc'>A-Z</option>
                     <option value='des'>Z-A</option>
                 </select>

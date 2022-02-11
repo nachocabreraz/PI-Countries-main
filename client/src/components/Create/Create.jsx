@@ -61,6 +61,9 @@ function hadleSelect(ev) {
 };
 
 function hadleSeason(ev) {
+    if(!ev.target.value){
+        return
+    }
     setInput({
         ...input,
         season: ev.target.value
@@ -135,6 +138,7 @@ function hadleSubmit(ev) {
                 <div>
                     <label >Season: </label>
                     <select className="blank" onChange={(ev) => hadleSeason(ev)} >
+                    <option value="" disabled="">-Select Season-</option>
                     <option value ='summer'>summer</option>
                     <option value ='winter'>winter</option>
                     <option value='autumn'>autumn</option>

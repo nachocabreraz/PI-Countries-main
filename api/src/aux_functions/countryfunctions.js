@@ -69,7 +69,16 @@ const getFromName = async (req, res) => {
         include: {model: Activity},
         where: {name: {[Op.iLike]: `%${name}%`}} //agregue%
       });
-      return country ? res.json(country) : res.status(404).json({message: 'There is no country with that name'})
+      if(country.length===0) {
+        country = [{
+          name: 'Country not found, please check your spelling',
+          flag: 'https://ps.w.org/404-solution/assets/icon-256x256.jpg?rev=1610739',
+          capital: '-',
+          continent:'-',
+          population: '-'
+        }]
+      }
+      return res.json(country)
     } else {
       let auxCountries = await axios.get(`https://restcountries.com/v2/all`);
       await Promise.all(auxCountries.data.map((el)=>{

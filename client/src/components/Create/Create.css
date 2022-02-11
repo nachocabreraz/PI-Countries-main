@@ -73,14 +73,6 @@
 }
 
 .createContainer{
-    /* background-image: url('https://images.unsplash.com/photo-1616315168316-61d6e5f16ead?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'); */
-    /* background-image: url('https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    position: relative;
-    overflow-x: hidden;
-    display: grid; */
     display: grid; /*agregado*/
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;

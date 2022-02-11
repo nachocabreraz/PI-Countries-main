@@ -43,7 +43,7 @@
     margin-bottom: 2%;
     padding-top: 2%;
     text-align: justify;
-    border: 2px solid rgb(93 76 76 / 50%);
+    border: 2px solid rgba(95, 80, 12, 0.5);
     width: 346px;
     height: 284px;
     justify-content: center;
@@ -51,4 +51,5 @@
     flex-wrap: wrap;
     flex-direction: column;
     line-height: 1px;
+    font-style: oblique;
 }
