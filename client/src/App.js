@@ -14,9 +14,6 @@ function App() {
         <Route path='/home' component={Home}/>
         <Route path='/create' component={Create}/>
         <Route exact path='/country/:id' component={Detail}/>
-        <Route />
-        <Route />
-        <Route />
       </Switch>
     </div>
     </BrowserRouter>

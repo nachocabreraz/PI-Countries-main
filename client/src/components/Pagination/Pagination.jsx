@@ -11,7 +11,7 @@ export default function Pagination({countriesPerPage, allCountries, paginado, cu
         <nav>
             <ul>
                 {pageNumber && pageNumber.map(n=>(
-                    <button className='pag' key={n} onClick={()=>paginado(n)}>{n}</button>
+                    <button className={n===currentPage? 'active':'pag'} key={n} onClick={()=>paginado(n)}>{n}</button>
                 ))}
             </ul>
         </nav>

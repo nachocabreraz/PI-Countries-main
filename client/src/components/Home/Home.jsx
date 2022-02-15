@@ -141,7 +141,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                    <Pagination countriesPerPage={countriesPerPage} allCountries={allCountries.length} paginado={paginado}></Pagination>
+                    <Pagination currentPage={currentPage} countriesPerPage={countriesPerPage} allCountries={allCountries.length} paginado={paginado}></Pagination>
                 </div>
 
                 <div className="CardBig">

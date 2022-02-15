@@ -47,6 +47,7 @@
 
 .activity-button{
     border-radius: 15px;
+    border-color: transparent;
     background-color: rgba(165, 42, 42, 0.514);
     cursor: pointer;
 }
